@@ -1,5 +1,8 @@
-import functions as fn
+from functions import *
+import os
 import time
+os.system('cls')
+
 
 # lista principal de contactos
 lista_contactos = []
@@ -16,27 +19,15 @@ while bandera_de_ejecucion_incorrecta:
     try:
         opcion = int(input("Ingrese el número de la opción del menú que deseas seleccionar: "))
         if opcion == 1:
-            fn.agregar_contacto(lista_contactos)
+            agregar_contacto(lista_contactos)
         elif opcion == 2:
-            fn.mostrar_contactos(lista_contactos)
+            mostrar_contactos(lista_contactos)
         elif opcion == 3:
-            bandera_nombre_incorrecto = True
-            while bandera_nombre_incorrecto:
-                nombre_buscado = input("Ingrese el nombre a buscar: ").strip()
-                if len(nombre_buscado) > 0:
-                    bandera_nombre_incorrecto = False
-                else:
-                    print("El nombre no puede estar vacio.")
-            fn.buscar_contacto(lista_contactos, nombre_buscado)
+            os.system('cls')
+            buscar_contacto(lista_contactos)
         elif opcion == 4:
-            bandera_nombre_incorrecto = True
-            while bandera_nombre_incorrecto:
-                nombre_eliminar = input("Ingrese el nombre a eliminar: ").strip()
-                if len(nombre_eliminar) > 0:
-                    bandera_nombre_incorrecto = False
-                else:
-                    print("El nombre no puede estar vacio.")
-            fn.eliminar_contacto(lista_contactos, nombre_eliminar)
+            os.system('cls')
+            eliminar_contacto(lista_contactos)
         elif opcion == 5:
             bandera_de_ejecucion_incorrecta = False
             print("Gracias por utilizar la aplicación. Hasta pronto!")
